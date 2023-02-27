@@ -1,0 +1,4 @@
+do for [i=1:999:1] {
+    plot [0:8*pi][-3:3] 'sen.dat' every ::1::i w l ls 3 t "y=sen(x)", \
+    'sen.dat' every ::i::i w p pt 7 ps 3 t "Punto"
+}

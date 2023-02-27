@@ -1,0 +1,40 @@
+set title "Curvas de fase del hamiltoniano H=p^2/2ml^2-mglcos(q)"
+set xlabel "q"
+set ylabel "p"
+unset key
+npuntos=100
+sa=0.2
+do for [p=1:2:1] {
+    plot 'a2.dat' every ::0::npuntos-1 w l lt 2,\
+         'a2.dat' every ::npuntos::2*npuntos-1 w l lt 2,\
+         'a2.dat' every ::2*npuntos::3*npuntos-1 w l lt 2,\
+         'a2.dat' every ::3*npuntos::4*npuntos-1 w l lt 2,\
+         'a2.dat' every ::0::npuntos-1 u 1:2:($3)*sa:($4)*sa w vectors lt 2,\
+         'a2.dat' every ::npuntos::2*npuntos-1 u 1:2:($3)*sa:($4)*sa w vectors lt 2,\
+         'a2.dat' every ::2*npuntos::3*npuntos-1 u 1:2:($3)*sa:($4)*sa w vectors lt 2,\
+         'a2.dat' every ::3*npuntos::4*npuntos-1 u 1:2:($3)*sa:($4)*sa w vectors lt 2,\
+         'a0.dat' every ::0::npuntos-1 w l lt 3,\
+         'a0.dat' every ::npuntos::2*npuntos-1 w l lt 1,\
+         'a0.dat' every ::2*npuntos::3*npuntos-1 w l lt 1,\
+         'a0.dat' every ::3*npuntos::4*npuntos-1 w l lt 1,\
+         'a0.dat' every ::0::npuntos-1 u 1:2:($3)*sa:($4)*sa w vectors lt 1,\
+         'a0.dat' every ::npuntos::2*npuntos-1 u 1:2:($3)*sa:($4)*sa w vectors lt 1,\
+         'a0.dat' every ::2*npuntos::3*npuntos-1 u 1:2:($3)*sa:($4)*sa w vectors lt 1,\
+         'a0.dat' every ::3*npuntos::4*npuntos-1 u 1:2:($3)*sa:($4)*sa w vectors lt 1,\
+         'a7.dat' every ::0::npuntos-1 w l lt 4,\
+         'a7.dat' every ::npuntos::2*npuntos-1 w l lt 4,\
+         'a7.dat' every ::2*npuntos::3*npuntos-1 w l lt 4,\
+         'a7.dat' every ::3*npuntos::4*npuntos-1 w l lt 4,\
+         'a7.dat' every ::0::npuntos-1 u 1:2:($3)*sa:($4)*sa w vectors lt 4,\
+         'a7.dat' every ::npuntos::2*npuntos-1 u 1:2:($3)*sa:($4)*sa w vectors lt 4,\
+         'a7.dat' every ::2*npuntos::3*npuntos-1 u 1:2:($3)*sa:($4)*sa w vectors lt 4,\
+         'a7.dat' every ::3*npuntos::4*npuntos-1 u 1:2:($3)*sa:($4)*0.5 w vectors lt 4,\
+         'a5.dat' every ::0::npuntos-1 w l lt 7,\
+         'a5.dat' every ::npuntos::2*npuntos-1 w l lt 7,\
+         'a5.dat' every ::2*npuntos::3*npuntos-1 w l lt 7,\
+         'a5.dat' every ::3*npuntos::4*npuntos-1 w l lt 7,\
+         'a5.dat' every ::0::npuntos-1 u 1:2:($3)*sa:($4)*sa w vectors lt 7,\
+         'a5.dat' every ::npuntos::2*npuntos-1 u 1:2:($3)*sa:($4)*sa w vectors lt 7,\
+         'a5.dat' every ::2*npuntos::3*npuntos-1 u 1:2:($3)*sa:($4)*sa w vectors lt 7,\
+         'a5.dat' every ::3*npuntos::4*npuntos-1 u 1:2:($3)*sa:($4)*sa w vectors lt 7
+}

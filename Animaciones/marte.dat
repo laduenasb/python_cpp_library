@@ -1,0 +1,4 @@
+do for [i=0:1000:1] {
+    plot [-2:2][-2:2] 'orbita.dat' every ::0::i w l ls 3 t "y", \
+    'orbita.dat' every ::i::i w p pt 7 ps 3 lt 5 t "Punto"
+}

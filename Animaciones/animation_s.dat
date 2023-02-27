@@ -1,0 +1,10 @@
+set pm3d depthorder
+do for [i=1:100:1] {
+    set iso 100,100
+    set zrange[-3:3]	
+    t0=0.0 
+    dt=0.001
+    set title sprintf("Tiempo \%f\ (s)",t0+i*dt)	
+    splot [-6:6][-6:6][-4:4] sin(x)*cos(y)*sin(5*(t0+i*2*dt)) w pm3d lt 3 t "ondas"
+    pause dt
+}

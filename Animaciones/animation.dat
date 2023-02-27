@@ -1,0 +1,5 @@
+do for [ii=1:10000:10] {
+    splot 'kk.dat' every ::1::ii w l lt 2 t "Atractor de lorentz", \
+          'kk.dat' every ::ii::ii w p lt 3 lw 5 t "Punto"
+          set view 150*(sin(-1*ii*0.0009)+1),150*(sin(ii*0.0009)+1)
+}

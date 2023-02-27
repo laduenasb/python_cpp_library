@@ -1,0 +1,4 @@
+do for [i=1:9999:50] {
+    plot [0:12][0:4] 'fourier.dat' every ::0::i w l ls 3 t "fourier", \
+    'fourier.dat' every ::i::i w vectors t "Punto"
+}

@@ -1,0 +1,6 @@
+do for [i=1:18000:5] {
+    splot 'penduloc2.dat' u 5:6:7 every ::1::i w l ls 3 t "Pendulo", \
+          'penduloc2.dat' u 5:6:7 every ::i::i w p pt 7 ps 1.5 lt 1 t "Punto", \
+          'penduloc2.dat' u 2:3:4:5:6:7 every ::i::i w vectors lt 2 t "Vector posicion"
+          set view 160*(sin(-1*i*0.0009)+1),160*(sin(i*0.0009)+1)
+}
